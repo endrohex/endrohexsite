@@ -37,7 +37,7 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-8 flex flex-col gap-6">
             <FadeIn delay={0.1} y={30}>
               <p className="text-xl sm:text-2xl md:text-3xl font-semibold uppercase tracking-tight text-white leading-snug font-display" style={{ letterSpacing: '-0.02em' }}>
-                We believe the web is being ruined by visual homogenization. Websites shouldn't feel like generic PDF brochures — they should be immersive spatial environments.
+                We believe the web is being ruined by visual homogenization. Websites shouldn't feel like generic PDF brochures, they should be immersive spatial environments.
               </p>
             </FadeIn>
 
@@ -121,7 +121,7 @@ export const AboutSection: React.FC = () => {
             {
               num: "02 // PRESSURIZED CODE",
               title: "The Frontier Tech Stack",
-              desc: "We exclusively code in highly-optimized frontend frameworks—React, TS, Tailwind, custom GSAP, and Three.js canvas matrices. Zero generic visual page-builders or heavy, bloated web extensions.",
+              desc: "We exclusively code in highly-optimized frontend frameworks; React, TS, Tailwind, custom GSAP, and Three.js canvas matrices. Zero generic visual page-builders or heavy, bloated web extensions.",
               icon: <Cpu size={16} />
             },
             {
@@ -163,19 +163,19 @@ export const AboutSection: React.FC = () => {
                 year: "2024",
                 stage: "THE SPARKS // THE CONVERGENCE",
                 title: "Identifying the Template Fatigue",
-                desc: "Aneek (systems architect) and Spandan (creative visual engineer) cross paths in digital graphics and open-source visual channels. Bonding over a shared fatigue for standardized, visually homogenized SaaS templates, they set out to establish a bespoke web studio designed to wow viewers."
+                desc: "Aneek and Spandan first connected online in 2024. Before there was ever a studio, they were just two friends with a shared urge to rebel against a visually homogenized, flawed digital market. That mutual defiance became the foundation for what would eventually become their bespoke web studio."
               },
               {
                 year: "2025",
                 stage: "DISCARDING INTERMEDIARIES // P2P LOOP",
                 title: "Bypassing the Freelancing Giants",
-                desc: "Deciding to reject standard platforms like Upwork and Fiverr, we created our direct peer-to-peer independent agency model. Powered exclusively by direct organic Instagram outreach and high-fidelity showcase pieces, we secured our first wave of ambitious startup founders."
+                desc: "Before building our own independent model, 2025 was all about the grind. We bypassed the usual Fiverr and Upwork hustle by joining a freelance agency. Working as freelancers, we spent the year building sites for real clients, honing our high-fidelity design skills and learning exactly how the industry worked from the inside."
               },
               {
                 year: "2026",
                 stage: "IMMERSIVE FRONTIERS // INDEPENDENT BOUTIQUE",
                 title: "Elite Web Architectures",
-                desc: "Today, Endrohex operates as an independent design and development laboratory. We build web experiences that feel like custom-engineered software platforms rather than boilerplate brochures, driving conversions and helping brands command premium visual pricing."
+                desc: "Deciding to reject standard platforms like Upwork and Fiverr, we created our direct peer-to-peer independent agency model. Powered exclusively by direct organic Instagram outreach and high-fidelity showcase pieces, we secured our first wave of ambitious startup founders."
               }
             ].map((milestone, idx) => (
               <FadeIn key={idx} delay={idx * 0.1} y={30} className="relative group">
