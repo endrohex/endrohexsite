@@ -20,7 +20,7 @@ export const ProjectsSection: React.FC = () => {
     {
       title: "Apple Website Clone",
       desc: "Apple-inspired premium, sleek landing design with cinematic transitions.",
-      url: "https://apple10x.vercel.app",
+      url: "https://apple10x.pages.dev/",
       isHosted: true,
       icon: <Globe size={18} className="text-[var(--colors-primary-on-dark)]" />,
       telemetryId: "PRJ-PORT-01",
