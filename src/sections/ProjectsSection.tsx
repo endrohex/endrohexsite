@@ -58,8 +58,8 @@ export const ProjectsSection: React.FC = () => {
     {
       title: "BL Beauty Lounge",
       desc: "A premium luxury layout showcasing a salon beauty branding space.",
-      url: "#",
-      isHosted: false,
+      url: "https://blbeautyalpha.pages.dev/",
+      isHosted: true,
       icon: <ShieldAlert size={18} className="text-[var(--colors-primary-on-dark)]" />,
       telemetryId: "PRJ-PORT-05",
       isMobileMockup: true,
