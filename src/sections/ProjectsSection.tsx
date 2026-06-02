@@ -39,8 +39,8 @@ export const ProjectsSection: React.FC = () => {
     {
       title: "Roxima B",
       desc: "A professional construction company layout with structured visual branding.",
-      url: "#",
-      isHosted: false,
+      url: "https://roxima-b.pages.dev/",
+      isHosted: true,
       icon: <Layout size={18} className="text-[var(--colors-primary-on-dark)]" />,
       telemetryId: "PRJ-PORT-03",
       isMobileMockup: true,
