@@ -29,7 +29,7 @@ const DEV_DATA: DevProfile[] = [
     ],
     githubUrl: "https://github.com/weblith",
     portfolioUrl: "https://aneekbio.vercel.app",
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/aneek-biswas-180a09413/",
     gradientId: "gradient-aneek",
     avatarChar: "AB",
     telemetryId: "DEV-SEC-01",
