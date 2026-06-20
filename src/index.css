@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Apple Design System Color Palette */
+  --colors-primary: #0066cc;
+  --colors-primary-focus: #0071e3;
+  --colors-primary-on-dark: #2997ff;
+  --colors-ink: #1d1d1f;
+  --colors-body: #1d1d1f;
+  --colors-body-on-dark: #ffffff;
+  --colors-body-muted: #cccccc;
+  --colors-ink-muted-80: #333333;
+  --colors-ink-muted-48: #7a7a7a;
+  --colors-divider-soft: rgba(0, 0, 0, 0.04);
+  --colors-divider-soft-on-dark: rgba(255, 255, 255, 0.06);
+  --colors-hairline: #e0e0e0;
+  --colors-hairline-on-dark: #333333;
+  --colors-canvas: #ffffff;
+  --colors-canvas-parchment: #f5f5f7;
+  --colors-surface-pearl: #fafafc;
+  --colors-surface-tile-1: #272729;
+  --colors-surface-tile-2: #2a2a2c;
+  --colors-surface-tile-3: #252527;
+  --colors-surface-black: #000000;
+  --colors-surface-chip-translucent: rgba(210, 210, 215, 0.64);
+  --colors-on-primary: #ffffff;
+  --colors-on-dark: #ffffff;
+
+  /* Spacing Scale */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 17px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 80px;
+
+  /* Border Radii Scale */
+  --rounded-none: 0px;
+  --rounded-xs: 5px;
+  --rounded-sm: 8px;
+  --rounded-md: 11px;
+  --rounded-lg: 18px;
+  --rounded-pill: 9999px;
+  --rounded-full: 9999px;
+
+  /* Unified Premium Elevation */
+  --product-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+  --product-shadow-on-dark: rgba(0, 0, 0, 0.65) 5px 8px 36px 0px;
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body {
+    background-color: var(--colors-canvas);
+    color: var(--colors-body);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro", "Inter", system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
+    min-height: 100vh;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* SF Pro Display optimized for sizes >= 19px */
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  h3 {
+    font-size: 28px;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+  }
+
+  a, button {
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  button:active, .btn-active:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Prevent auto-zooming on form fields for iOS and Android */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--colors-canvas-parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+/* Deep caustics and light rays for the dark tiles */
+.caustics-layer {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(41, 151, 255, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.03) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ocean-light-ray {
+  position: absolute;
+  top: -20%;
+  left: 20%;
+  width: 45%;
+  height: 140%;
+  background: linear-gradient(105deg, rgba(41, 151, 255, 0.04) 0%, rgba(41, 151, 255, 0) 70%);
+  transform: rotate(-10deg);
+  transform-origin: top left;
+  pointer-events: none;
+  filter: blur(50px);
+  z-index: 1;
+  animation: shimmerRay 20s infinite alternate ease-in-out;
+}
+
+.ray-2 {
+  left: 55%;
+  width: 35%;
+  background: linear-gradient(115deg, rgba(0, 102, 204, 0.02) 0%, rgba(0, 102, 204, 0) 80%);
+  filter: blur(70px);
+  animation-delay: -5s;
+}
+
+@keyframes shimmerRay {
+  0% {
+    transform: rotate(-10deg) scaleX(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(-7deg) scaleX(1.05);
+    opacity: 1;
+  }
+}
+
+/* Technical blueprints grid overlay */
+.bathymetric-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sleek CSS Device Frames (Refactored to be fluid and avoid horizontal overflow) */
+.laptop-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.laptop-screen {
+  background: #000000;
+  border-radius: 12px;
+  padding: 6px 6px 8px;
+  border: 4px solid #1a1a1f;
+  box-shadow: var(--product-shadow);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.laptop-screen img, .laptop-screen iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  border: none;
+}
+
+.laptop-body {
+  height: 8px;
+  background: #d2d2d7;
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  width: 108%;
+  margin-left: -4%;
+  border-top: 1px solid #f5f5f7;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+  z-index: 2;
+}
+
+.laptop-body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 4px;
+  background: #8e8e93;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Phone Mockup */
+.phone-mockup {
+  position: relative;
+  width: 170px;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 6px solid #1a1a1f;
+  border-radius: 28px;
+  background: #000000;
+  aspect-ratio: 9 / 19;
+  overflow: hidden;
+  box-shadow: var(--product-shadow);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 14px;
+  background: #1a1a1f;
+  border-radius: 0 0 8px 8px;
+  z-index: 10;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Glassmorphism details */
+.frosted-glass {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.frosted-glass-dark {
+  background-color: rgba(39, 39, 41, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Subtle micro-animations for elements loading */
+.bubble-particle {
+  position: absolute;
+  bottom: -20px;
+  background: rgba(41, 151, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp 15s infinite linear;
+  z-index: 1;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Dynamic radar line */
+.sonar-scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--colors-primary-on-dark), transparent);
+  animation: scan 3s infinite linear;
+  z-index: 15;
+}
+
+@keyframes scan {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
