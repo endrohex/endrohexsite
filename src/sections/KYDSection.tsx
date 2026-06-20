@@ -164,6 +164,7 @@ export const KYDSection: React.FC = () => {
                         src={AVATAR_IMAGE_URL} 
                         alt={dev.name} 
                         className="w-full h-full object-cover transition-all duration-500"
+                        loading="lazy"
                       />
                     </div>
 

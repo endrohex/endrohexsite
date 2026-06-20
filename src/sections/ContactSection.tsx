@@ -88,10 +88,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             {/* Why Endrohex container */}
             <FadeIn delay={0.4} y={20} className="w-full">
               <div className="p-6 rounded-[var(--rounded-lg)] border border-white/[0.08] bg-white/[0.02] flex flex-col gap-3 shadow-sm">
-                <h4 className="text-sm uppercase tracking-wider text-white font-semibold flex items-center gap-2 font-display">
+                <h3 className="text-sm uppercase tracking-wider text-white font-semibold flex items-center gap-2 font-display">
                   <Compass size={14} className="text-[var(--colors-primary-on-dark)]" />
                   Why Endrohex?
-                </h4>
+                </h3>
                 <p className="text-xs sm:text-sm text-[var(--colors-body-muted)] leading-relaxed font-light font-sans">
                   Direct coordination delivers unified technology, design, and video production without standard agency overhead. We integrate fullstack architectures, 3D spatial modeling, CGI, visual effects, and cinematography straight to your brand.
                 </p>

@@ -133,12 +133,12 @@ export const AboutSection: React.FC = () => {
           ].map((item, idx) => (
             <FadeIn key={idx} delay={0.2 + idx * 0.08} y={25} className="flex flex-col gap-3">
               <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[var(--colors-primary-on-dark)] font-semibold">{item.num}</span>
-              <h4 className="text-lg font-semibold uppercase text-white font-display flex items-center gap-3 mt-1" style={{ letterSpacing: '-0.02em' }}>
+              <h3 className="text-lg font-semibold uppercase text-white font-display flex items-center gap-3 mt-1" style={{ letterSpacing: '-0.02em' }}>
                 <span className="p-2 rounded-[var(--rounded-sm)] bg-white/5 text-[var(--colors-primary-on-dark)] inline-flex">
                   {item.icon}
                 </span>
                 {item.title}
-              </h4>
+              </h3>
               <p className="text-xs sm:text-sm text-[var(--colors-body-muted)] leading-relaxed font-light font-sans">
                 {item.desc}
               </p>
@@ -149,9 +149,9 @@ export const AboutSection: React.FC = () => {
         {/* 5. Chronological Journey Timeline */}
         <div className="flex flex-col gap-10 mt-6 border-t border-white/[0.08] pt-10 text-left">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
-            <h4 className="text-xl sm:text-2xl font-semibold uppercase text-white font-display" style={{ letterSpacing: '-0.025em' }}>
+            <h3 className="text-xl sm:text-2xl font-semibold uppercase text-white font-display" style={{ letterSpacing: '-0.025em' }}>
               Chronological Journey
-            </h4>
+            </h3>
             <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--colors-primary-on-dark)]">
               // AN AUTHENTIC STUDIO RECORD
             </span>
@@ -196,9 +196,9 @@ export const AboutSection: React.FC = () => {
 
                 {/* Milestone Details */}
                 <div className="p-5 sm:p-6 rounded-[var(--rounded-lg)] border border-white/[0.04] bg-white/[0.02] hover:bg-white/[0.04] relative overflow-hidden transition-all duration-300">
-                  <h5 className="text-sm sm:text-base font-semibold uppercase text-white mb-1.5 font-display" style={{ letterSpacing: '-0.015em' }}>
+                  <h4 className="text-sm sm:text-base font-semibold uppercase text-white mb-1.5 font-display" style={{ letterSpacing: '-0.015em' }}>
                     {milestone.title}
-                  </h5>
+                  </h4>
                   <p className="text-xs sm:text-sm text-[var(--colors-body-muted)] leading-relaxed font-light font-sans">
                     {milestone.desc}
                   </p>

@@ -3,6 +3,7 @@ import { MessageSquare, ArrowUpRight, Github, Instagram, Mail, Menu, X, Check } 
 import { motion, AnimatePresence } from "framer-motion";
 import { HeroSection } from "./sections/HeroSection";
 import { AboutSection } from "./sections/AboutSection";
+import { ServicesSection } from "./sections/ServicesSection";
 import { KYDSection } from "./sections/KYDSection";
 import { PricingSection } from "./sections/PricingSection";
 import { ProjectsSection } from "./sections/ProjectsSection";
@@ -69,74 +70,77 @@ function App() {
     >
       <div className="relative bg-[var(--colors-canvas)] text-[var(--colors-ink)] min-h-screen w-full overflow-x-clip select-none">
 
-      {/* 1. Global Navigation (Apple Global Nav) */}
-      <div className="fixed top-0 left-0 w-full h-11 bg-[var(--colors-surface-black)] z-50 flex items-center px-4 md:px-8 border-b border-white/[0.08]">
-        <div className="w-full max-w-5xl mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-1.5 text-xs font-black text-white uppercase tracking-[0.15em] font-display">
-            <span>Endrohex</span>
-          </a>
-
-          {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-6">
-            {[
-              { label: "Home", href: "#home" },
-              { label: "Manifesto", href: "#about" },
-              { label: "Agency Team", href: "#kyd" },
-              { label: "Project Tiers", href: "#pricing" },
-              { label: "Showcase", href: "#projects" },
-              { label: "Endorsements", href: "#testimonials" },
-              { label: "FAQs", href: "#faq" },
-              { label: "Contact", href: "#contact" },
-            ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[11px] font-medium text-white/70 hover:text-white uppercase tracking-wider transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Quick Actions */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsChatOpen(true)}
-              className="px-3 py-1 rounded-[var(--rounded-sm)] bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold uppercase tracking-wider transition-colors"
-            >
-              Comms
-            </button>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-1 md:hidden rounded bg-white/5 text-white/70 hover:text-white"
-              aria-label="Toggle Mobile Menu"
-            >
-              {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. Sub-Navigation (Frosted Sticky Bar - Desktop Only) */}
-      <div className="fixed top-11 left-0 w-full h-[52px] frosted-glass border-b border-[var(--colors-hairline)] z-45 hidden md:flex items-center px-4 md:px-8 shadow-sm">
-        <div className="w-full max-w-5xl mx-auto flex justify-between items-center">
-          <span className="text-sm font-bold text-[var(--colors-ink)] uppercase tracking-widest font-display">
-            Agency Showcase
-          </span>
-          <div className="flex items-center gap-4">
-            <span className="hidden sm:inline text-xs text-[var(--colors-ink-muted-80)] font-medium">
-              Creative & Technical Agency // Direct Client Portal
-            </span>
-            <a
-              href="#pricing"
-              className="px-4 py-1.5 rounded-[var(--rounded-pill)] bg-[var(--colors-primary)] text-white text-xs font-semibold hover:bg-[var(--colors-primary-focus)] transition-colors shadow-sm"
-            >
-              Select Plan
+      {/* 1. Global Navigation (Apple Global Nav Header) */}
+      <header className="relative z-50">
+        <div className="fixed top-0 left-0 w-full h-11 bg-[var(--colors-surface-black)] z-50 flex items-center px-4 md:px-8 border-b border-white/[0.08]">
+          <div className="w-full max-w-5xl mx-auto flex justify-between items-center">
+            {/* Logo */}
+            <a href="#home" className="flex items-center gap-1.5 text-xs font-black text-white uppercase tracking-[0.15em] font-display">
+              <span>Endrohex</span>
             </a>
+
+            {/* Desktop Nav Items */}
+            <nav className="hidden md:flex items-center gap-6">
+              {[
+                { label: "Home", href: "#home" },
+                { label: "Manifesto", href: "#about" },
+                { label: "Services", href: "#services" },
+                { label: "Agency Team", href: "#kyd" },
+                { label: "Project Tiers", href: "#pricing" },
+                { label: "Showcase", href: "#projects" },
+                { label: "Endorsements", href: "#testimonials" },
+                { label: "FAQs", href: "#faq" },
+                { label: "Contact", href: "#contact" },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-[11px] font-medium text-white/70 hover:text-white uppercase tracking-wider transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            {/* Quick Actions */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsChatOpen(true)}
+                className="px-3 py-1 rounded-[var(--rounded-sm)] bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold uppercase tracking-wider transition-colors"
+              >
+                Comms
+              </button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-1 md:hidden rounded bg-white/5 text-white/70 hover:text-white"
+                aria-label="Toggle Mobile Menu"
+              >
+                {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+
+        {/* 2. Sub-Navigation (Frosted Sticky Bar - Desktop Only) */}
+        <div className="fixed top-11 left-0 w-full h-[52px] frosted-glass border-b border-[var(--colors-hairline)] z-45 hidden md:flex items-center px-4 md:px-8 shadow-sm" role="navigation" aria-label="Sub-navigation">
+          <div className="w-full max-w-5xl mx-auto flex justify-between items-center">
+            <span className="text-sm font-bold text-[var(--colors-ink)] uppercase tracking-widest font-display">
+              Agency Showcase
+            </span>
+            <div className="flex items-center gap-4">
+              <span className="hidden sm:inline text-xs text-[var(--colors-ink-muted-80)] font-medium">
+                Creative & Technical Agency // Direct Client Portal
+              </span>
+              <a
+                href="#pricing"
+                className="px-4 py-1.5 rounded-[var(--rounded-pill)] bg-[var(--colors-primary)] text-white text-xs font-semibold hover:bg-[var(--colors-primary-focus)] transition-colors shadow-sm"
+              >
+                Select Plan
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Spacer for double nav (44px + 52px = 96px on desktop, 44px on mobile) */}
       <div className="h-11 md:h-[96px] w-full" />
@@ -154,6 +158,7 @@ function App() {
               {[
                 { label: "Home Base", href: "#home" },
                 { label: "Studio Manifesto", href: "#about" },
+                { label: "Capabilities", href: "#services" },
                 { label: "Agency Team", href: "#kyd" },
                 { label: "Project Tiers", href: "#pricing" },
                 { label: "Agency Showcase", href: "#projects" },
@@ -192,6 +197,7 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection />
+        <ServicesSection />
         <KYDSection />
         <PricingSection onSelectPlan={handleSelectPlan} />
         <ProjectsSection />
@@ -230,6 +236,7 @@ function App() {
             <ul className="flex flex-col gap-2.5 text-xs text-white/50 font-light font-sans">
               <li><a href="#home" className="hover:text-[#00F2FE] hover:pl-1 transition-all">// Home Base</a></li>
               <li><a href="#about" className="hover:text-[#00F2FE] hover:pl-1 transition-all">// Studio Manifesto</a></li>
+              <li><a href="#services" className="hover:text-[#00F2FE] hover:pl-1 transition-all">// Capabilities</a></li>
               <li><a href="#kyd" className="hover:text-[#00F2FE] hover:pl-1 transition-all">// Agency Team</a></li>
               <li><a href="#pricing" className="hover:text-[#00F2FE] hover:pl-1 transition-all">// Project Tiers</a></li>
               <li><a href="#projects" className="hover:text-[#00F2FE] hover:pl-1 transition-all">// Agency Showcase</a></li>
